@@ -42,6 +42,7 @@ fn main() {
             y[i] += (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i]);
             //println!("{:?}", y);
         }
+        println!("{:?}", y);
     }
 
     // Print the final solution
