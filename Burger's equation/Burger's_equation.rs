@@ -28,7 +28,7 @@ fn main() {
     }
 
     // RK4 solver
-    for _ in 0..steps {
+    for step in 0..steps {
         let k1 = f(&y, nu, dx);
         let mut k2 = [0.0; 10];
         let mut k3 = [0.0; 10];
@@ -42,7 +42,9 @@ fn main() {
             y[i] += (dt / 6.0) * (k1[i] + 2.0 * k2[i] + 2.0 * k3[i] + k4[i]);
             //println!("{:?}", y);
         }
-        println!("{:?}", y);
+        //println!("{:?}", y);
+        println!("Time step {}: {:?}", step+1, y);
+        println!();
     }
 
     // Print the final solution
